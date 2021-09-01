@@ -1,0 +1,97 @@
+<div class="pcoded-content">
+  <div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+      <div class="page-wrapper">
+        <!-- Page-header start -->
+        <div class="page-header card">
+          <div class="row align-items-end">
+            <div class="col-lg-8">
+              <div class="page-header-title" style="margin-left:300px">
+             
+                 <h4>PAYMENT DETAILS</h4>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+        <!-- Page-header end -->
+
+        <!-- Page-body start -->
+        <div class="page-body">
+
+          <!-- Hover table card start -->
+          <div class="card">
+            <div class="card-header">
+             
+
+              <div  class="row">
+                  {{#each user}}
+                <div class="col-sm-4">
+                     <h4 style=" color:green">Full Name</h4>
+                    
+                  <h4> {{first_name}}
+                          {{last_name}}</h4>
+                     
+                 
+                   
+                </div>
+
+                <div class="col-sm-4"  >
+                  <h4 style=" color:green">Email</h4>
+                  ₦
+                  {{email}}</div>
+                   <div class="col-sm-4"  >
+                  <h4 style=" color:green">Mobile No:</h4>
+                  
+                  {{phone}}</div>
+                   {{/each}}
+              </div>
+
+              <hr/>
+{{#each payments}}
+              <div class="row" style="margin:auto">
+                    <div class="col-sm-6"  >
+                  <h6 style=" color:green">Card Name</h6>
+                  &nbsp;    &nbsp;  &nbsp;
+                   <label style=" color:black">{{CardName}}</label>
+    &nbsp;    &nbsp;  &nbsp;
+                     <h6 style=" color:green">Expiry Date</h6>
+    &nbsp;    &nbsp;  &nbsp;
+                        <label style=" color:black">{{ExpiryDate}}</label>
+                  
+                  </div>
+
+                      <div class="col-sm-6"  >
+                  <h6 style=" color:green">Card Number</h6>
+                      &nbsp;    &nbsp;  &nbsp;
+                   <label style=" color:black">{{CardNumber}}</label>
+    &nbsp;    &nbsp;  &nbsp;
+                     <h6 style=" color:green">Amount</h6>
+                         &nbsp;    &nbsp;  &nbsp;
+                       <label style=" color:black"> ₦ {{Amount}}</label>
+                  
+                  </div>
+
+              </div>
+
+              {{/each}}
+               
+              </div>
+          
+            </div>
+        
+          </div>
+          <!-- Hover table card end -->
+
+        </div>
+        <!-- Page-body end -->
+      </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector">
+
+    </div>
+  </div>
+</div>

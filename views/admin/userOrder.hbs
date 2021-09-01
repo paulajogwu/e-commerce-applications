@@ -1,0 +1,113 @@
+<div class="pcoded-content">
+  <div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+      <div class="page-wrapper">
+        <!-- Page-header start -->
+        <div class="page-header card">
+          <div class="row align-items-end">
+            <div class="col-lg-8">
+              <div class="page-header-title" style="margin-left:300px">
+             
+                 <h4>iTEM ORDERED BY CUSTOMER</h4>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+        <!-- Page-header end -->
+
+        <!-- Page-body start -->
+        <div class="page-body">
+
+          <!-- Hover table card start -->
+          <div class="card">
+            <div class="card-header">
+              <a class="btn btn-primary" style="border-radius: 5px;"><span
+                  style="color: white;"
+                >Export PDF</span>
+              </a>
+              <a class="btn btn-primary" style="border-radius: 5px;"><span
+                  style="color: white;"
+                >Export Excel</span>
+              </a>
+             <br/> <br/>
+
+              <div  class="row">
+                <div class="col-sm-4">
+                    {{#each user}}
+                  <h4> {{first_name}}
+                          {{last_name}}</h4>
+                           <label>Email : <span>{{email}}</span></label> 
+                  <label>Mobile No: <span>{{phone}}</span></label> 
+                 
+                    {{/each}}
+                </div>
+
+                <div class="col-sm-4"  >
+                  <h4 style=" color:green">Total Price</h4>
+                  ₦
+                  {{totalPrice}}</div>
+                   <div class="col-sm-4"  >
+                  <h4 style=" color:green">Date</h4>
+                  
+                  {{date}}</div>
+              </div>
+               
+              </div>
+              {{!-- <div class="card-header-right">
+                <ul class="list-unstyled card-option">
+                  <li><i class="icofont icofont-simple-left"></i></li>
+                  <li><i class="icofont icofont-maximize full-card"></i></li>
+                  <li><i class="icofont icofont-minus minimize-card"></i></li>
+                  <li><i class="icofont icofont-refresh reload-card"></i></li>
+                  <li><i class="icofont icofont-error close-card"></i></li>
+                </ul></div> --}}
+            </div>
+            <div class="card-block table-border-style">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center;">Name</th>
+                      <th style="text-align: center;">Category</th>
+                      <th style="text-align: center;">Description</th>
+                      <th style="text-align: center;">Quantity</th>
+                      <th style="text-align: center;">Unit Price</th>
+                      <th style="text-align: center;">Sub Total</th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each products}}
+                      <tr>
+                        <td style="text-align: center;">{{item.name}}</td>
+                        <td style="text-align: center;">{{item.category}}</td>
+                        <td
+                          style="text-align: center;"
+                        >{{item.description}}</td>
+                        <td style="text-align: center;">{{this.qty}}</td>
+                        <td style="text-align: center;">₦ {{item.price}} </td>
+                        <td style="text-align: center;">₦ {{this.price}} </td>
+
+                      </tr>
+                    {{/each}}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Hover table card end -->
+
+        </div>
+        <!-- Page-body end -->
+      </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector">
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,208 @@
+<div class="pcoded-content">
+  <div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+      <div class="page-wrapper">
+        <!-- Page-header start -->
+        <div class="page-header card">
+          <div class="row align-items-end">
+            <div class="col-lg-8">
+
+                                                <div class="page-header-title" style="margin-left:300px">
+
+                                <h4>LIST OF Product Orders</h4>
+                            </div>
+            </div>
+       
+          </div>
+        </div>
+        <!-- Page-header end -->
+
+        <!-- Page-body start -->
+        <div class="page-body">
+
+          <!-- Hover table card start -->
+          <div class="card">
+            <div class="card-header">
+
+              <a class="btn btn-primary" style="border-radius: 5px;"><span
+                  style="color: white;"
+                >Export PDF</span>
+              </a>
+              <a class="btn btn-primary" style="border-radius: 5px;"><span
+                  style="color: white;"
+                >Export Excel</span>
+              </a>
+              <div class="card-header-right">
+                <ul class="list-unstyled card-option">
+                  <li><i class="icofont icofont-simple-left"></i></li>
+                  <li><i class="icofont icofont-maximize full-card"></i></li>
+                  <li><i class="icofont icofont-minus minimize-card"></i></li>
+                  <li><i class="icofont icofont-refresh reload-card"></i></li>
+                  <li><i class="icofont icofont-error close-card"></i></li>
+                </ul></div>
+            </div>
+            <div class="card-block table-border-style">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th style="text-align: center;">Full Name</th>
+                      <th style="text-align: center;">E-mail</th>
+                      <th style="text-align: center;">Phone No</th>
+
+                      <th style="text-align: center;">Address</th>
+
+                      <th style="text-align: center;">Total</th>
+                      <th style="text-align: center;">Date</th>
+                      <th style="text-align: center;">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    {{#each products}}
+                      <tr>
+                        <td style="text-align: center;">
+                          {{first_name}}
+                          {{last_name}}</td>
+                        <td style="text-align: center;">{{email}}</td>
+                        <td style="text-align: center;">{{phone}}</td>
+                        <td style="text-align: center;">{{state}}
+                          <br />
+                          <p>{{address}}</p></td>
+                        <td style="text-align: center;">{{Amount}}</td>
+                        <td style="text-align: center;">{{date}} </td>
+
+                        <td style="text-align: center;"><a
+                            href="/ViewOrderedItem?id={{id}}"
+                            {{!-- data-id="{{id}}" --}}
+                            class="btn btn-primary"
+                            style="border-radius: 5px;"
+                            {{! data-toggle="modal"
+                            data-target="#orderedItemModal" }}
+                          ><span style="color: white;">orderItem</span> </a>
+
+                          &nbsp;<a
+                            href="/Updateproduct?id={{id}}"
+                            class="btn btn-danger"
+                            style="border-radius: 5px;"
+                          ><span style="color: white;"> delete</span> </a>&nbsp;
+                          <a
+                            href="/UserPaymentView?id={{payment_id}}"
+                            {{!-- data-id="{{user_id}}"
+                            id="item" --}}
+                            class="btn btn-primary"
+                            style="border-radius: 5px;"
+                            {{!-- data-toggle="modal"
+                            data-target="#PaymentModal" --}}
+                          ><span
+                              style="color: white;"
+                              {{!-- onclick="getItem()" --}}
+                            >Payment</span>
+                          </a>
+                        </td>
+
+                      </tr>
+                    {{/each}}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <!-- Hover table card end -->
+
+          <!-- Contractor signer Modal -->
+          <div
+            class="modal fade"
+            id="PaymentModal"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header bg-success text-light">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    <i class="la la-plus"></i>
+                    Payment Details
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div id="Userpay">
+
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-danger"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Page-body end -->
+      </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector">
+
+    </div>
+  </div>
+</div>
+<script>
+  //window.localStorage.setItem('itemId',"Boy") // for switch
+  Array.from(document.querySelectorAll('#item')).forEach((item)=> {
+  item.addEventListener('click',() =>{
+  console.log("go5",item.getAttribute('data-id'));
+  window.localStorage.setItem('itemId',item.getAttribute('data-id')) }) })
+</script>
+
+<script>
+  let user_id = window.localStorage.getItem('itemId') console.log("go",
+  user_id);
+</script>
+
+<script>
+  var apiData; function getItem(){ let xhrc = new XMLHttpRequest(); xhrc.open(
+  "GET","http://localhost:8000/UserPaymentView/" + `${user_id}`);//, false
+  xhrc.setRequestHeader("Content-Type", "application/json");
+  xhrc.onreadystatechange = function () { if (this.status == 200 &&
+  this.readyState == 4) { apiData = JSON.parse(this.responseText);
+  console.log("itemId", apiData); console.log("Google", apiData[0].Amount); }
+  else { console.log(this.statusText); } }; xhrc.send(); let itemTables =
+  document.querySelector("#Userpay"); //for (let i = 0; i < apiData.length; i++)
+  { // alert(data.data.length) let i = 0; i < apiData.length; i++ // for (let j
+  = 0; j < apiData[i].length; j++) { let content = ` <tr> <td style="text-align:
+  center;" > ${apiData[0].Amount} </td> <td style="text-align: center;" >
+  ${apiData[0].first_name} </td> <td style="text-align: center;" >
+  ${apiData[0].last_name} </td> </tr>` itemTables.innerHTML += content; } //}
+  //}
+
+</script>
+
+{{! <td style="text-align: center;">${apiData.category}</td>
+                                                            <td style="text-align: center;"></td>
+                                                            <td style="text-align: center;">${apiData.qty}</td>
+                                                            <td style="text-align: center;">${apiData.description}</td>
+                                                             <td style="text-align: center;">${apiData.name}</td>
+                                                            <td style="text-align: center;"><img src="${apiData.name}" height="60px"></td>
+                                  }}

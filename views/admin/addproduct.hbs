@@ -1,0 +1,224 @@
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-header start -->
+                {{!-- <div class="page-header card">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title">
+                                <i class="icofont icofont-chart-bar-graph bg-c-blue"></i>
+                                <div class="d-inline">
+                                    <h4>Morris Chart</h4>
+                                    <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="page-header-breadcrumb">
+                                <ul class="breadcrumb-title">
+                                    <li class="breadcrumb-item">
+                                        <a href="index.html">
+                                            <i class="icofont icofont-home"></i>
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#!">Charts</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">Morris Chart</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                <!-- Page-header end -->
+
+                <div class="page-body">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header" style="margin: auto;">
+                                    <h5 style="color: rgb(44, 44, 141); font-size:30px; transform:Uppercase">Add Product
+                                    </h5>
+
+                                    <div class="card-header-right"> <i class="icofont icofont-spinner-alt-5"></i> </div>
+                                </div>
+
+                                <div class="card-block" style="border-color: blue; border-weight:20px">
+                                    <div id="morris-extra-area">
+                                        <div class="col-sm-8 mobile-inputs" style="margin: auto;">
+                                            {{!-- <h4 class="sub-title">Color Inputs</h4> --}}
+                                            <form action="/submitproduct" method="POST" enctype="multipart/form-data">
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6">
+                                                        <label>Product Title</label>
+                                                        <input type="text" class="form-control " name="title"
+                                                            placeholder="product title" style="border-radius: 20px; border-color:black ">
+                                                    
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label>Product Price</label>
+                                                        <input type="number" class="form-control " name="price" placeholder=""
+                                                            style="border-radius: 20px; border-color:black ">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6">
+                                                        <label>Product Category</label>
+
+                                                        <select class="form-control " placeholder=""
+                                                            style="border-radius: 20px;border-color:black " name="category">
+                                                            {{#each cat}}
+                                                            <option style="border-radius: 20px; "  value="{{name_c}}">
+                                                                {{name_c}} </option>
+                                                            {{/each}}
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label>Product Quantity</label>
+                                                        <input type="number" name="quantity" class="form-control " placeholder=""
+                                                            style="border-radius: 20px; border-color:black">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6">
+                                                        <label>Currency</label>
+                                                        <select class="form-control " name="currency" id="currency" placeholder=""
+                                                            style="border-radius: 20px; border-color:black">
+                                                            <option style="border-radius: 20px; " value="₦"> ₦ Naira
+                                                            </option>
+                                                            <option style="border-radius: 20px; " value="$"> $ Dollar
+                                                            </option>
+                                                            <option style="border-radius: 20px; " value="£"> £ Pounds
+                                                            </option>
+                                                        </select>
+                                                        <label>Product Description</label>
+                                                        <textarea class="form-control " name="description" placeholder=""
+                                                            style="border-radius: 0px;  height:70px;border-color:black" ></textarea>
+
+
+                                                    </div>
+
+                                                    <div class="col-sm-4" style=" margin: auto">
+                                                        <label>Product Image</label>
+                                                        <input type="file" class="form-control form-control" name="upload"
+                                                            placeholder=""
+                                                            style="border-radius: 0px; width:200px; height:135px; border-color:black">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4" style="margin: auto;">
+                                                    <input type="submit" class=" btn btn-primary form-control "
+                                                        style="border-radius: 20px; ">
+                                                </div>
+
+
+                                        </div>
+
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EXTRA AREA CHART Ends -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="styleSelector">
+
+    </div>
+</div>
+</div>
+
+{{!-- {{#section 'head'}}
+ <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+{{/section}} --}}
+
+
+
+
+{{!-- {{#section 'script'}} --}}
+     <script type="text/javascript" src="assets/js/jquery-3.5.1.min.js"></script>
+    <script
+     src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+     crossorigin="anonymous"
+   ></script>
+    <script type="text/javascript" src="assets/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="assets/js/popper.js/popper.min.js"></script>
+    <script type="text/javascript" src="assets/js/bootstrap/js/bootstrap.min.js"></script>
+  
+<script>
+    $(document).ready(function () {
+    $('#currency').select2();
+
+  
+});
+</script>
+
+
+   
+
+  <script type="text/javascript" src="assets/js/select.js"></script>
+ <script>
+ $(document).ready(function(){
+ $('.newsletterForm').on('submit', function(evt){
+ evt.preventDefault();
+ var action = $(this).attr('action');
+ var $container = $(this).closest('.formContainer');
+ $.ajax({
+ url: action,
+ type: 'POST',
+ success: function(data){
+ if(data.success){
+ $container.html('<h2>Thank you!</h2>');
+ } else {
+ $container.html('There was a problem.');
+ }
+ },
+ error: function(){
+ $container.html('There was a problem.');
+ }
+ });
+ });
+ });
+ </script>
+{{!-- {{/section}} --}}
+
+
+
+
+
+{{!-- 
+
+{{#section 'jquery'}}
+ <script src="/vendor/jqfu/js/vendor/jquery.ui.widget.js"></script>
+ <script src="/vendor/jqfu/js/jquery.iframe-transport.js"></script>
+ <script src="/vendor/jqfu/js/jquery.fileupload.js"></script>
+ <script>
+ $(document).ready(function(){
+ $('#fieldPhoto').fileupload({
+ dataType: 'json',
+ done: function(e, data){
+ $.each(data.result.files, function(index, file){
+ $('#fileUploads').append($('<div class="upload">' +
+ '<span class="glyphicon glyphicon-ok"></span>' +
+'&nbsp;' + file.originalName + '</div>'));
+ });
+ }
+ });
+ });
+ </script>
+{{/section}} 
+
+--}}

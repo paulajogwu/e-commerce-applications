@@ -1,0 +1,86 @@
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+        <!-- Main-body start -->
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-header start -->
+                <div class="page-header card">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title" style="margin-left:300px">
+
+                                <h4>LIST OF PRODUCT</h4>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Page-header end -->
+
+            <!-- Page-body start -->
+            <div class="page-body">
+
+
+                <!-- Hover table card start -->
+                <div class="card">
+                    <div class="card-header">
+                        <a class="btn btn-primary" style="border-radius: 5px;"><span style="color: white;">Export
+                                PDF</span>
+                        </a>
+                        <a class="btn btn-primary" style="border-radius: 5px;"><span style="color: white;">Export
+                                Excel</span>
+                        </a>
+
+                    </div>
+                    <div class="card-block table-border-style">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;">Name</th>
+                                        <th style="text-align: center;">Category</th>
+                                        <th style="text-align: center;">Quantity</th>
+                                        <th style="text-align: center;">Price</th>
+                                        <th style="text-align: center;">Description</th>
+                                        <th style="text-align: center;">Image</th>
+                                        <th style="text-align: center;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each products}}
+                                    <tr>
+                                        <td style="text-align: center;">{{name}}</td>
+                                        <td style="text-align: center;">{{category}}</td>
+                                        <td style="text-align: center;">{{quantity}}</td>
+                                        <td style="text-align: center;">{{currency}} {{price}}</td>
+                                        <td style="text-align: center;">{{description}}</td>
+                                        <td style="text-align: center;"><img src="{{image}}" height="60px"></td>
+                                        <td style="text-align: center;"><a href="" class="btn btn-danger"
+                                                style="border-radius: 5px;"><span style="color: white;"> delete</span>
+                                            </a> <a href="/Updateproduct?id={{id}}" class="btn  btn-primary"
+                                                style="border-radius: 5px;"><span style="color: white;">Edit</span> </a>
+                                        </td>
+
+                                    </tr>
+                                    {{/each}}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Hover table card end -->
+
+
+            </div>
+            <!-- Page-body end -->
+        </div>
+    </div>
+    <!-- Main-body end -->
+
+    <div id="styleSelector">
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,92 @@
+  
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-header start -->
+                                    <div class="page-header card">
+                                        <div class="row align-items-end">
+                                            <div class="col-lg-8">
+                                                 <div class="page-header-title" style="margin-left:300px">
+
+                                <h4>LIST OF Customers</h4>
+                            </div>
+                                            </div>
+                                     
+                                    </div>
+                                </div>
+                                <!-- Page-header end -->
+                                
+                                <!-- Page-body start -->
+                                <div class="page-body">
+                                   
+                                    
+                                    <!-- Hover table card start -->
+                                    <div class="card">
+                                        <div class="card-header">
+                                           <a class="btn btn-primary" style="border-radius: 5px;"><span style="color: white;">Export
+                                PDF</span>
+                        </a>
+                        <a class="btn btn-primary" style="border-radius: 5px;"><span style="color: white;">Export
+                                Excel</span>
+                        </a>
+                                        </div>
+
+                                        <div class="card-block table-border-style">
+                                            <div class="table-responsive">
+                                                <table class="table table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="text-align: center;">Title</th>
+                                                            <th style="text-align: center;">First Name</th>
+                                                            <th style="text-align: center;">Last Name</th>
+                                                            <th style="text-align: center;">Email</th>
+                                                            <th style="text-align: center;">Address</th>
+                                                            <th style="text-align: center;">Company</th>
+
+                                                             <th style="text-align: center;">City</th>
+                                                            <th style="text-align: center;">State</th>
+                                                            <th style="text-align: center;">Gender</th>
+                                                            <th style="text-align: center;">Phone</th>
+                                                            <th style="text-align: center;">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {{#each customers}}
+                                                        <tr>
+                                                            <td style="text-align: center;" >{{title}}</td>
+                                                            <td style="text-align: center;">{{first_name}}</td>
+                                                            <td style="text-align: center;">{{last_name}}</td>
+                                                            <td style="text-align: center;">{{email}} {{price}}</td>
+                                                            <td style="text-align: center;">{{address}}</td>
+                                                            <td style="text-align: center;">{{company}}</td>
+
+                                                            <td style="text-align: center;">{{city}}</td>
+                                                            <td style="text-align: center;">{{state}}</td>
+                                                            <td style="text-align: center;">{{gender}}</td>
+                                                            <td style="text-align: center;">{{phone}}</td>
+                                                            <td style="text-align: center;"> <a href="" class="btn  btn-info" style="border-radius: 5px;" ><span  style="color: white;">View Orders</span> </a>  </td>
+                                                            
+                                                        </tr>
+                                                        {{/each}}
+                                                      
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Hover table card end -->
+                                    
+                                
+                                </div>
+                                <!-- Page-body end -->
+                            </div>
+                        </div>
+                        <!-- Main-body end -->
+
+                        <div id="styleSelector">
+
+                        </div>
+                    </div>
+                </div>

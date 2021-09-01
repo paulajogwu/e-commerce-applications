@@ -1,0 +1,142 @@
+{{#if cat}}
+<div class="pcoded-content">
+    <div class="pcoded-inner-content">
+
+        <div class="main-body">
+            <div class="page-wrapper">
+                <!-- Page-header start -->
+                {{!-- <div class="page-header card">
+                    <div class="row align-items-end">
+                        <div class="col-lg-8">
+                            <div class="page-header-title">
+                                <i class="icofont icofont-chart-bar-graph bg-c-blue"></i>
+                                <div class="d-inline">
+                                    <h4>Morris Chart</h4>
+                                    <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="page-header-breadcrumb">
+                                <ul class="breadcrumb-title">
+                                    <li class="breadcrumb-item">
+                                        <a href="index.html">
+                                            <i class="icofont icofont-home"></i>
+                                        </a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#!">Charts</a>
+                                    </li>
+                                    <li class="breadcrumb-item"><a href="#">Morris Chart</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
+                <!-- Page-header end -->
+
+                <div class="page-body">
+                    <div class="row">
+
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header" style="margin: auto;">
+                                    <h5 style="color: rgb(44, 44, 141); font-size:30px; transform:Uppercase">Update Product
+                                    </h5>
+
+                                    <div class="card-header-right"> <i class="icofont icofont-spinner-alt-5"></i> </div>
+                                </div>
+
+                                <div class="card-block" style="border-color: blue; border-weight:20px">
+                                    <div id="morris-extra-area">
+                                        <div class="col-sm-8 mobile-inputs" style="margin: auto;">
+                                            {{!-- <h4 class="sub-title">Color Inputs</h4> --}}
+
+                                             
+                                              {{#each  products}}
+                                            <form>
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6">
+                                                        <label>Product Title</label>
+                                                        <input type="text" class="form-control "
+                                                            placeholder="product title" value="{{name}}"
+                                                            style="border-radius: 20px; border-color:black">
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label>Product Price</label>
+                                                        <input type="number" class="form-control "  value="{{price}}" placeholder=""
+                                                            style="border-radius: 20px; border-color:black">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6">
+                                                        <label>Product Category</label>
+                                                        <select class="form-control " placeholder=""  
+                                                            style="border-radius: 20px; border-color:black">
+                                                            {{!-- <option style="border-radius: 20px; "> {{category}}</option> --}}
+                                                            {{!-- {{#cat}}  --}}
+                                                            <option style="border-radius: 20px; "> {{cat}}</option>
+                                                            {{!-- {{/cat}} --}}
+                                                        </select>
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <label>Product Quantity</label>
+                                                        <input type="number" class="form-control "  value="{{quantity}}" placeholder=""
+                                                            style="border-radius: 20px; border-color:black">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-sm-6">
+                                                          <label>Currency</label>
+                                                        <select class="form-control " placeholder=""  value="{{currency}}"
+                                                            style="border-radius: 20px; border-color:black">
+                                                            <option style="border-radius: 20px; " value="₦">  ₦ Naira  </option>
+                                                            <option style="border-radius: 20px; " value="$">  $ Dollar </option>
+                                                            <option style="border-radius: 20px; " value="£">  £ Pounds</option>
+                                                        </select>
+                                                        <label>Product Description</label>
+                                                        <textarea class="form-control " placeholder=""   
+                                                            style="border-radius: 0px;border-color:black; height:70px">{{description}}</textarea>
+
+                                                      
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <label>Product Image</label>
+                                                        <input type="file" class="form-control form-control"  value="{{image}}"
+                                                            placeholder=""
+                                                            style="border-radius: 0px; width:200px; height:135px;border-color:black">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4" style="margin: auto;">
+                                                    <input type="submit" class=" btn btn-primary form-control "
+                                                        style="border-radius: 20px; ">
+                                                </div>
+
+
+                                        </div>
+
+
+                                        </form>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- EXTRA AREA CHART Ends -->
+ {{/each}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="styleSelector">
+
+    </div>
+</div>
+</div>
+{{/if}}
